@@ -16,29 +16,29 @@ const ogImageUrl = `${baseUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "La gestión no es sencilla | LDC Graduates",
+  title: "La gestión no es sencilla",
   description: "Te invitamos a fortalecer tu capacidad para planificar, estimar y gestionar de manera efectiva. Adquirí técnicas y herramientas para impulsar proyectos en diferentes tipos de contextos, desarrollando competencias para responder a necesidades cambiantes.",
-  keywords: ["gestión", "Cynefin", "proyectos", "planificación", "LDC", "capacitación"],
-  authors: [{ name: "LDC" }],
+  keywords: ["gestión", "Cynefin", "proyectos", "planificación", "capacitación"],
+  authors: [{ name: "Orbitando Club" }],
   openGraph: {
     type: "website",
     url: baseUrl,
-    title: "La gestión no es sencilla | LDC Graduates",
+    title: "La gestión no es sencilla",
     description: "Te invitamos a fortalecer tu capacidad para planificar, estimar y gestionar de manera efectiva. Adquirí técnicas y herramientas para impulsar proyectos en diferentes tipos de contextos.",
-    siteName: "LDC Graduates",
+    siteName: "Marco Cynefin",
     images: [
       {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "LDC Graduates - La gestión no es sencilla",
+        alt: "La gestión no es sencilla",
       },
     ],
     locale: "es_AR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "La gestión no es sencilla | LDC Graduates",
+    title: "La gestión no es sencilla",
     description: "Te invitamos a fortalecer tu capacidad para planificar, estimar y gestionar de manera efectiva. Adquirí técnicas y herramientas para impulsar proyectos en diferentes tipos de contextos.",
     images: [ogImageUrl],
   },
@@ -67,7 +67,7 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="LDC Graduates - La gestión no es sencilla" />
+        <meta property="og:image:alt" content="La gestión no es sencilla" />
         <meta name="twitter:image" content={ogImageUrl} />
         <meta name="twitter:image:src" content={ogImageUrl} />
         
