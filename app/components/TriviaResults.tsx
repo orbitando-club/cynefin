@@ -80,7 +80,7 @@ export default function TriviaResults({
       </div>
 
       <div className="w-full flex flex-col justify-center mt-16 md:mt-24 px-6  -mb-20">
-        <p className="w-full text-center text-lg">Desarrollado con amor por </p>
+        <p className="w-full text-center text-lg">Desarrollado con 💜 por </p>
         <div className="flex justify-center">
         <Image
           src={getAssetPath("/orbitando-black.png")}
