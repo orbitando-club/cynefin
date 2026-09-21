@@ -14,39 +14,39 @@ interface TriviaQuestion {
 const triviaQuestions: TriviaQuestion[] = [
   {
     id: 1,
-    question: "Nos solicitan liderar un proyecto de implementación de control de calidad: su objetivo es validar qué los empaques cumplan la normativa estándar (peso y tamaño).",
+    question: "Una lider coordina un equipo que realiza tareas administrativas ya estandarizadas. Deben completarse de manera unívoca una serie de items para pasar una auditoría.",
     correctAnswer: "simple",
     feedback: "Parece ser un entorno simple. Se aplica una lista de chequeo y el resultado es binario (cumple / no cumple).",
   },
   {
     id: 2,
-    question: "El sistema tradicional de riego ya no resulta efectivo porque las lluvias son impredecibles y los patrones hídricos cambiaron. Te ponen al frente de una iniciativa para buscar nuevos enfoques.",
+    question: "La empresa quiere reducir la rotación de personas jóvenes. No existe una causa evidente: aparecen diferencias según equipo, liderazgo y momento de carrera. RRHH decide probar distintas intervenciones en algunos equipos y observar qué sucede.",
     correctAnswer: "complejo",
-    feedback: "Se trata de un entorno complejo. No alcanza con la pericia técnica: hay que experimentar con nuevos esquemas, sensores, inteligencia climática o incluso rediseñar cultivos. Resta aprender aprender haciendo, probando y ajustando.",
+    feedback: "Se trata de un entorno complejo. La problemática no es unívoca y el resultado de nuestras intervenciones no es tan fácilmente predecible. Hay que experimentar con nuevos esquemas y ver qué resulta más efectivo.",
   },
   {
     id: 3,
-    question: "Participamos de una iniciativa para diseñar una estrategia de seguridad informática. ",
+    question: "Una empresa necesita seleccionar a una persona para un puesto de especialista en cyberseguridad. El equipo de reclutamiento no puede determinar por sí solo el nivel técnico de los candidatos, por lo cual incorpora especialistas para evaluar sus conocimientos.",
     correctAnswer: "complicado",
-    feedback: "Estamos en un entorno complicado. Las amenazas son conocidas, pero requieren evaluación técnica y decisiones informadas.",
+    feedback: "Estamos en un entorno complicado. No hay un solo procedimiento estandar, requerimos la experiencia de personas idoneas para evaluar la mejor opción de contratación.",
   },
   {
     id: 4,
-    question: "Un granizo o inundación destruye la cosecha en pleno ciclo productivo. Te piden coordinar un comité para hacer frente a la situación.",
+    question: "Un error en el sistema de liquidación de sueldos provoca que cientos de empleados reciban información incorrecta sobre sus pagos y comiencen a reclamar simultaneamente.",
     correctAnswer: "caotico",
-    feedback: "Claramente, es un contexto caótico. No hay tiempo para análisis: se debe actuar de inmediato para rescatar lo posible, proteger al personal y asegurar infraestructura.Recién después se analiza el impacto y se planifican respuestas.",
+    feedback: "Claramente, es un contexto caótico. Hay que actuar de inmediato para contener la situación, entender qué sucedió y priorizar la velocidad de la respuesta por sobre lo exhaustivo de la misma.",
   },
   {
     id: 5,
-    question: "Estás al frente de un equipo qué tiene a cargo determinar las dosis y combinaciones óptimas de nutrientes según análisis de suelo y rendimiento esperado.",
+    question: "Una lider recibe el pedido de implementar una nueva iniciativa de calidad que es nueva para la organización. Convoca a dos especialistas, analizan distintas alternativas y a partir de su experiencia determinan el procedimiento a seguir. ",
     correctAnswer: "complicado",
-    feedback: "Con seguridad, es un entorno complicado. No hay una receta universal: depende del diagnóstico experto,  una persona capacitada puede identificar soluciones y asesorarnos para optar por la mejor.",
+    feedback: "Con seguridad, es un entorno complicado. No hay una receta universal: depende del diagnóstico experto, una persona capacitada puede identificar diferentes alternativas y asesorarnos para optar por la mejor.",
   },
   {
     id: 6,
-    question: "La organización quiere entender qué ganancia podría obtener implementando sensores IoT, drones o plataformas de datos para toma de decisiones.",
+    question: "Una lider nota que su equipo está teniendo dificultades para colaborar. No existe una causa evidente: cada integrante interpreta la situación de una manera diferente. La lider decide probar una nueva dinámica de reuniones durante algunas semanas y observar qué efectos produce.",
     correctAnswer: "complejo",
-    feedback: "Parece ser un entorno complejo.  El desafío no es sólo técnico, sino cultural y organizacional. No hay una idea clara de cuál sería el outcome esperable. Las resistencias, los aprendizajes y los efectos emergen a medida que se experimenta con el sistema.", 
+    feedback: "Parece ser un entorno complejo. No hay parámetros que definan el resultado esperable. El desafío no es sólo técnico, sino cultural y organizacional. Las resistencias, los aprendizajes y los efectos emergen a medida que se experimenta con el sistema.",
   }
 ];
 
@@ -67,12 +67,12 @@ interface TriviaProps {
 export default function Trivia({ resultsText = "En apenas unos minutos ya fortaleciste tus competencias para diagnosticar escenarios y desarrollar estrategias posibles. <br/><br/>Ahora imaginate todo lo qué vas a poder aprender en nuestro taller de graduates.<br/><br/><b>Te esperamos para seguir entrenando!</b>" }: TriviaProps) {
   // Mezclar las preguntas una sola vez al montar el componente
   const [shuffledQuestions] = useState<TriviaQuestion[]>(() => shuffleArray(triviaQuestions));
-  
+
   const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  const [isFinished, setIsFinished] = useState(true);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
   const handleAnswer = (domain: string) => {
@@ -145,7 +145,7 @@ export default function Trivia({ resultsText = "En apenas unos minutos ya fortal
 
   return (
     <div className="relative mb-24" style={{ minHeight: '400px' }}>
-      <div 
+      <div
         key={currentQuestionIndex}
         className={`bg-white rounded-[24px] p-8 md:p-8 md:pl-20 md:pt-20 pb-16 flex 
           flex-col md:flex-row gap-8 md:gap-16 relative z-10 will-change-transform max-w-[1200px] 
@@ -158,10 +158,10 @@ export default function Trivia({ resultsText = "En apenas unos minutos ya fortal
           </div>
           {/* Barra de progreso */}
           <div className="w-full bg-gray-200 h-2 overflow-hidden">
-            <div 
+            <div
               className="bg-black h-2 rounded-full transition-all duration-300 ease-out"
-              style={{ 
-                width: `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%` 
+              style={{
+                width: `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%`
               }}
             />
           </div>
@@ -170,7 +170,7 @@ export default function Trivia({ resultsText = "En apenas unos minutos ya fortal
         {/* Selector Cynefin - arriba en móvil (25% más chico), 1/3 del ancho en desktop */}
         <div className="w-full md:w-1/3 flex-shrink-0 order-1 md:order-2 h-fit">
           <div className="scale-75 md:scale-100 origin-top md:origin-center">
-            <CynefinSelector 
+            <CynefinSelector
               handleClick={handleAnswer}
               disabled={showFeedback || isFinished}
               highlightDomain={showFeedback || isFinished ? (currentQuestion.correctAnswer as any) : null}
@@ -188,17 +188,16 @@ export default function Trivia({ resultsText = "En apenas unos minutos ya fortal
             </div>
             {/* Barra de progreso */}
             <div className="w-full bg-gray-200 h-2 overflow-hidden">
-              <div 
+              <div
                 className="bg-black h-2 rounded-full transition-all duration-300 ease-out"
-                style={{ 
-                  width: `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%` 
+                style={{
+                  width: `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%`
                 }}
               />
             </div>
           </div>
-          <p className={`md:mt-12 italic transition-opacity duration-300 ${
-            isTransitioning ? 'opacity-0' : 'opacity-100'
-          }`}>
+          <p className={`md:mt-12 italic transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'
+            }`}>
             {currentQuestion.question}
             <br /><br />
             ¿En qué dominio nos encontramos?

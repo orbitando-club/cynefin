@@ -110,7 +110,7 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

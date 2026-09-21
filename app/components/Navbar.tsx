@@ -37,10 +37,6 @@ export default function Navbar() {
       }`}
     >
       <div className="h-full max-w-[1100px] mx-auto px-4 flex items-center justify-between">
-        
-
-        <p className="text-lg md:text-xl text-ldc-complejo md:mr-6">LDC<span className="text-ldc-simple">.</span></p>
-
       </div>
     </nav>
   );

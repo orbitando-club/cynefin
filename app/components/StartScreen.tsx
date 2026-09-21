@@ -173,8 +173,8 @@ export default function StartScreen() {
           >
           {/* Título */}
           <h1 className="text-[64px] md:text-[88px] font-serif leading-[66px] md:leading-[72px] mb-24 px-12 block">
-            Potenciá <br/>
-            tus ideas
+            Hagamos un <br/>
+            experimento
           </h1>
 
           {/* Contenedor blanco con SVG y texto */}
@@ -191,8 +191,7 @@ export default function StartScreen() {
             {/* Texto explicativo - 2/3 del ancho */}
             <div className="w-full md:w-2/3 text-[18px] leading-relaxed my-auto md:pr-20">
               <p className="italic">
-              Te invitamos a un espacio donde podrás fortalecer tus habilidades para <b>planificar, estimar y gestionar</b> de manera efectiva. 
-              En este taller  vas a adquirir tecnicas y herramientas para impulsar proyectos en diferentes tipos de contextos, desarrollando competencias para responder a necesidades cambiantes.  
+              En nuestro día a día, nos toca impulsar proyectos en diferentes tipos de contextos, desarrollando competencias para responder a necesidades cambiantes.  
               <br/>
               <br/>
               Pero cuando hablamos de <b>contextos</b>… ¿a qué nos referimos exactamente? ¿Cómo se supone qué adoptemos nuestro estilo de gestion de acuerdo a cada entorno? Podemos darte algunas pistas para ir entrenando tu capacidad. <br/><br/>El <b>marco Cynefin</b>,  desarrollado por Dave Snowden,  nos propone una visualización sencilla y esquemática.
@@ -211,7 +210,9 @@ export default function StartScreen() {
             <i>Cynefin.</i>
           </h1>
 
-          <p className="text-[18px] leading-relaxed my-auto italic md:px-0 px-12 max-w-[800px] text-center mx-auto">A la hora de gestionar, podemos encontrarnos en distintos tipos de dominios: inclusive dentro de LDC, existen proyectos qué exigen enfoques diferenciados de acuerdo al contexto. 
+          <p className="text-[18px] leading-relaxed my-auto italic md:px-0 px-12 max-w-[650px] text-center mx-auto">
+            A la hora de gestionar, podemos encontrarnos en distintos tipos de dominios: 
+            cada proyecto puede exigir un enfoque diferenciado de acuerdo al contexto. 
           </p>
 
           {/* Contenedor de scrollytelling con 4 secciones */}
