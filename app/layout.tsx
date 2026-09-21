@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 // Función para obtener la URL base completa
 function getBaseUrl() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desupernova.github.io";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://orbitando-club.github.io";
   return `${siteUrl}${basePath}`;
 }
 
