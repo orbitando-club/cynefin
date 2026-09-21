@@ -72,7 +72,7 @@ export default function Trivia({ resultsText = "En apenas unos minutos ya fortal
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isFinished, setIsFinished] = useState(true);
+  const [isFinished, setIsFinished] = useState(false);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
   const handleAnswer = (domain: string) => {
